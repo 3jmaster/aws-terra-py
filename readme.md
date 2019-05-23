@@ -7,7 +7,7 @@ As a AWS operator, how do I create resources in multiple existing AWS accounts?
 
 
 ## Steps
-0. Ensure you have AWS credentials (as iam user control plane) in your env variables. or you can get it via `login_iam.sh` in the aws-security-iam repo
+0. Ensure you have AWS credentials (as iam user control plane) in your env variables to assume these target accounts' roles
 
 1. Update `target_accounts.json` with the list of targets you want to execute on
 
