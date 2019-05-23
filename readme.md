@@ -16,6 +16,7 @@ As a AWS operator, how do I create resources in multiple existing AWS accounts?
   `./populate_terraform.py`
 
 3. Proceed to to execute terraform init, plan and apply run:
+
   `terraform init ./terraform`
 
   `terraform plan ./terraform`
