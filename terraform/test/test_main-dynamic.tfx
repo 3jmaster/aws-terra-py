@@ -1,0 +1,30 @@
+# Assume a role in the target account so we can create resources there
+provider "aws" {
+  region = "ap-southeast-1"
+
+  dynamic "assume_role" {
+    for_each        = [ for acct in var.aws_account_numbers: {
+      alias         = acct.key
+      role_arn      = "arn:aws:iam::${acct.value}:role/admin-role"
+      session_name  = "${acct.key}_ROLE_SESSION"
+    }]
+
+    content {
+      role_arn      = acct.value.role_arn
+      session_name  = acct.value.session_name
+    }
+    alias         = acct.value.alias
+
+  }
+}
+
+output "assumedRole" {
+  value = ""
+}
+
+# runs all tf under this module
+module "team-module" {
+  source = "./modules/team-account-roles"
+
+  providers = {}
+}
