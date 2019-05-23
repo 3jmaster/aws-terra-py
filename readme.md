@@ -1,4 +1,4 @@
-# AWS ops
+# AWS Terraform Ops (with Python's help)
 
 As a AWS operator, how do I create resources in multiple existing AWS accounts?
 
