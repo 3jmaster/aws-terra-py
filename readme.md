@@ -11,11 +11,11 @@ As a AWS operator, how do I create resources in multiple existing AWS accounts?
 
 1. Update `target_accounts.json` with the list of targets you want to execute on
 
-2. Populate all the terraform tf files dynamically for ALL AWS ACCOUNTS using python and jinja run:
+2. Populate all the terraform tf files dynamically for ALL AWS ACCOUNTS using python and jinja. run:
 
   `./populate_terraform.py`
 
-3. Proceed to to execute terraform init, plan and apply run:
+3. Proceed to execute terraform init, plan and apply run:
 
   `terraform init ./terraform`
 
